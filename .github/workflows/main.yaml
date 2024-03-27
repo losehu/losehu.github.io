@@ -38,9 +38,9 @@ jobs:
           hexo clean
           hexo generate
           cd public
+          git config --global init.defaultBranch main
 
           git init
-          git config --global init.defaultBranch main
 
           git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
 
