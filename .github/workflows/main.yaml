@@ -48,11 +48,14 @@ jobs:
           
 
           git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
-          git pull origin main
+          git fetch --all
+          git pull origin main --allow-unrelated-histories
+
+          # 将远程仓库的内容合并到本地仓库（可能需要手动解决冲突）
           git merge --allow-unrelated-histories origin/main
 
+          # 推送本地仓库的变更到远程仓库（使用 --force 选项覆盖远程仓库的历史记录）
           git push -u origin main --force
-
     # - name: Pull changes from remote
 
     #   run: |
