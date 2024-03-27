@@ -40,7 +40,7 @@ jobs:
           cd public
 
           git init
-          git config pull.rebase true
+          git config pull.rebase false
 
           git add .
           git commit -m "upload"
