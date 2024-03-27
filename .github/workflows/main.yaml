@@ -46,7 +46,11 @@ jobs:
           # git push -u origin main
 
     - name: Pull changes from remote
-      run: git push --force origin main
+
+      run: |
+        git remote show origin
+
+        git push --force origin main
 
 
     - name: Push changes
