@@ -42,16 +42,22 @@ jobs:
           git init 
           git checkout -b main
           # 添加远程仓库
-          git remote add origin https://${{ secrets.GH_TOKEN }}github.com/losehu/losehu.github.io.git
+          # git remote add origin https://${{ secrets.GH_TOKEN }}github.com/losehu/losehu.github.io.git
           git add .
 
           # 提交更改到本地仓库
           git commit -m "upload"
 
 
-          # 推送更改到远程的 main 分支
-          git push --force origin main
+          # # 推送更改到远程的 main 分支
+          # git push --force origin main
 
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          branch: main
+          directory: public
 
       
     # - name: token
