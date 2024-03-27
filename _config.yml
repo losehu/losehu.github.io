@@ -105,3 +105,4 @@ deploy:
   type: git
   repo: git@github.com:losehu/losehu.github.io.git
   branch: main
+
