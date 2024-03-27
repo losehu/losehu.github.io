@@ -40,13 +40,15 @@ jobs:
           cd public
 
           git init
+          git config --global init.defaultBranch main
+
           git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
 
           git add .
           git commit -m "upload"
 
           git push -u origin main --force
-          
+
     # - name: Pull changes from remote
 
     #   run: |
