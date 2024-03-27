@@ -40,35 +40,13 @@ jobs:
           cd public
 
           git init
-          git config pull.rebase false
+          git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
 
           git add .
           git commit -m "upload"
-          git checkout -b main
-          
 
-          git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
-          git fetch --all
-          git pull origin main --allow-unrelated-histories
-
-          # 将远程仓库的内容合并到本地仓库（可能需要手动解决冲突）
-          # git merge --allow-unrelated-histories origin/main
-
-          # 解决冲突并自动保留本地更改
-          git checkout --ours -- .
-
-
-          # 添加解决了冲突的文件到暂存区
-          git add .
-
-          # 提交解决了冲突的文件
-          git commit -m "Resolved merge conflicts"
-
-          # 推送你的变更到远程仓库
-          git push -u origin main
-
-          # 推送本地仓库的变更到远程仓库（使用 --force 选项覆盖远程仓库的历史记录）
           git push -u origin main --force
+          
     # - name: Pull changes from remote
 
     #   run: |
@@ -77,11 +55,11 @@ jobs:
     #     git push --force origin main
 
 
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          branch: main
-          directory: public
+    # - name: Push changes
+    #   uses: ad-m/github-push-action@master
+    #   with:
+    #       github_token: ${{ secrets.GH_TOKEN }}
+    #       branch: main
+    #       directory: public
 
       
