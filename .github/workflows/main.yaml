@@ -42,7 +42,7 @@ jobs:
           git checkout -b main
           git add .
           git commit -m "upload"
-          git remote set-url origin https://github.com/losehu/losehu.github.io.git
+          git remote add origin https://github.com/losehu/losehu.github.io.git
           git push origin main
 
 
