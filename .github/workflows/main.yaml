@@ -6,7 +6,7 @@ on:
       - sources
 
 jobs:
-  run-script:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,11 +17,6 @@ jobs:
       run: |
         git config --global user.name "losehu"
         git config --global user.email "wu58430@126.com"
-        git config --global url.https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git https://github.com/
-        git remote set-url origin https://losehu:${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
-
-
-
         
     - name: Install Node.js and npm
       uses: actions/setup-node@v2
@@ -31,19 +26,14 @@ jobs:
     - name: Install Hexo
       run: npm install -g hexo-cli
       
-    - name: Install Hexo
-      run:  npm install hexo-deployer-git --save
+    - name: Install Hexo deployer
+      run: npm install hexo-deployer-git --save
            
-    - name: Run script
+    - name: Deploy to GitHub Pages
       env:
-          TOKEN: ${{ secrets.GH_TOKEN }}  
+        TOKEN: ${{ secrets.GH_TOKEN }}  
       run: |
-        
-        git config --global user.name "losehu"
-        git config --global user.email "wu58430@126.com"
-        git config --global url.https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git https://github.com/
         git remote set-url origin https://losehu:${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
-
-        bash upload
-        # 在这里填写您要执行的脚本命令
-        # 比如：bash your_script.sh
+        hexo clean
+        hexo generate
+        hexo deploy
