@@ -39,20 +39,20 @@ jobs:
           hexo generate
           cd public
           git init
-          git checkout -b main
+          git checkout -b abc
           git add .
           git commit -m "upload"
           # git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
           # git push -u origin main
 
-    - name: Pull changes from remote
-      run: git pull origin main
+    # - name: Pull changes from remote
+    #   run: git pull origin main
 
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
           github_token: ${{ secrets.GH_TOKEN }}
-          branch: main
+          branch: abc
           directory: public
 
       
