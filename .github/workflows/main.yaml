@@ -39,7 +39,7 @@ jobs:
           hexo generate
           cd public
           git init
-          git checkout -b abcd
+          git checkout -b main
           git add .
           git commit -m "upload"
           # git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
@@ -52,7 +52,7 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
           github_token: ${{ secrets.GH_TOKEN }}
-          branch: abcd
+          branch: main
           directory: public
 
       
