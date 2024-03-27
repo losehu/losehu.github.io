@@ -42,9 +42,11 @@ jobs:
           git add .
           git commit -m "upload"
           git checkout -b main
+          
 
-          # git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
-          # git push -u origin main
+          git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
+          git pull origin main
+          git push -u origin main --force
 
     # - name: Pull changes from remote
 
