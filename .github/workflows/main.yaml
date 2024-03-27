@@ -39,7 +39,7 @@ jobs:
           hexo generate
           cd public
           git init 
-          git checkout -b main
+          git checkout -m main
           git add .
           git commit -m "upload"
           git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
