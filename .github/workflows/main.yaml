@@ -52,7 +52,7 @@ jobs:
           git pull origin main --allow-unrelated-histories
 
           # 将远程仓库的内容合并到本地仓库（可能需要手动解决冲突）
-          git merge --allow-unrelated-histories origin/main
+          # git merge --allow-unrelated-histories origin/main
 
           # 解决冲突并自动保留本地更改
           git checkout --ours -- .
