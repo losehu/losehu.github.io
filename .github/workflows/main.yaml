@@ -35,4 +35,5 @@ jobs:
       run: |
         hexo clean
         hexo generate
-        hexo deploy --token $GH_TOKEN  # 使用环境变量传递令牌
+        hexo deploy 
+
