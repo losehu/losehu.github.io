@@ -26,6 +26,9 @@ jobs:
     - name: Install Hexo
       run: npm install -g hexo-cli
       
+    - name: token
+      run: export GH_TOKEN= ${{ secrets.GH_TOKEN }}
+
     - name: Install Hexo deployer
       run: npm install hexo-deployer-git --save
            
