@@ -38,7 +38,10 @@ jobs:
           hexo clean
           hexo generate
           cd public
+
           git init
+          git config pull.rebase true
+
           git add .
           git commit -m "upload"
           git checkout -b main
