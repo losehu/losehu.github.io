@@ -17,6 +17,7 @@ jobs:
       run: |
         git config --global user.name "losehu"
         git config --global user.email "wu58430@126.com"
+        git config --global url.https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git https://github.com/
         git remote set-url origin https://losehu:${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
 
 
@@ -37,6 +38,12 @@ jobs:
       env:
           TOKEN: ${{ secrets.GH_TOKEN }}  
       run: |
+        
+        git config --global user.name "losehu"
+        git config --global user.email "wu58430@126.com"
+        git config --global url.https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git https://github.com/
+        git remote set-url origin https://losehu:${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
+
         bash upload
         # 在这里填写您要执行的脚本命令
         # 比如：bash your_script.sh
