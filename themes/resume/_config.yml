@@ -1,0 +1,77 @@
+cdn:
+  # These base libraries cannot be deleted
+  jquery: https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js
+  vue: https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js
+  # When these CDN resources are deleted, local resources are loaded.
+  common: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/common.js
+  escape: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/css.escape.js
+  smooth_scroll: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/smooth-scroll.min.js
+  # css: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/css/style.min.css
+  # Optional plug-in: image zoom
+  fancybox:
+    css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5/dist/jquery.fancybox.min.css
+    js: https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5/dist/jquery.fancybox.min.js
+
+# robots meta tag
+robots: noindex,nofollow
+
+favicon:
+  small: favicon-16x16-next.png
+  medium: favicon-32x32-next.png
+  apple_touch_icon: apple-touch-icon-next.png
+  safari_pinned_tab: logo.svg
+
+valine:   
+  appId: zV6a146Uba33KBLN72Imf1yp-gzGzoHsz
+  appKey: iUEl5eg2AmIJDiABADyy1n3o
+  avatar: monsterid  
+  placeholder: 请在这里书写你想说的话~  
+  pageSize: 15
+  visitor: true
+
+
+
+# the footer of your site
+copyright: '<div style="text-algin:center;font-family: Times New Roman;" >
+
+<b>上德無爲而無以爲 下德爲之而有以爲</b><br/>
+<b><span id="sitetime"></span><br/></b>
+
+ <b>本站访问量<span id="busuanzi_value_site_pv"></span>次<br/></b>
+<script language="javascript">
+        function siteTime(){
+            window.setTimeout("siteTime()", 1000);
+            var seconds = 1000;
+            var minutes = seconds * 60;
+            var hours = minutes * 60;
+            var days = hours * 24;
+            var years = days * 365;
+            var today = new Date();
+            var todayYear = today.getFullYear();
+            var todayMonth = today.getMonth()+1;
+            var todayDate = today.getDate();
+            var todayHour = today.getHours();
+            var todayMinute = today.getMinutes();
+            var todaySecond = today.getSeconds();
+           
+            var t1 = Date.UTC(2024,03,20,00,00,00); //北京时间2019-1-1 00:00:00
+           
+            var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+            var diff = t2-t1;
+          
+            var diffYears = Math.floor(diff/years);
+            var diffDays = Math.floor((diff/days)-diffYears*365);
+            var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+            var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+            var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+            document.getElementById("sitetime").innerHTML="运行时长: "+diffYears+" 年 "+diffDays+" 日 "+diffHours+" 時 "+diffMinutes+" 分 "+diffSeconds+" 秒";
+
+        }
+        siteTime();
+    </script>
+       <b> 
+        Modified by <a href="https://github.com/losehu" target="_blank">LoseHu</a> <span class="footer__heart">❤️</span><br></b>
+
+
+<a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2024078613号</a>
+    </div>'

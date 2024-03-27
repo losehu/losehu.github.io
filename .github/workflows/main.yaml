@@ -1,0 +1,42 @@
+name: build html
+
+on:
+  push:
+    branches:
+      - sources
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Git credentials
+      run: |
+        git config --global user.name "losehu"
+        git config --global user.email "wu58430@126.com"
+        git remote set-url origin https://losehu:${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
+
+
+
+        
+    - name: Install Node.js and npm
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install Hexo
+      run: npm install -g hexo-cli
+      
+    - name: Install Hexo
+      run:  npm install hexo-deployer-git --save
+           
+    - name: Run script
+      env:
+          TOKEN: ${{ secrets.GH_TOKEN }}  
+      run: |
+        bash upload
+        # 在这里填写您要执行的脚本命令
+        # 比如：bash your_script.sh

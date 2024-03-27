@@ -1,0 +1,27 @@
+{
+  "name": "hexo-theme-resume",
+  "version": "2.0.0",
+  "description": "Minimalist resume theme for Hexo.",
+  "main": "package.json",
+  "scripts": {
+    "test": "echo test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aeneag/resume-hexo.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "resume"
+  ],
+  "author": "xaoxuu (https://github.com/aeneag/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aeneag/resume-theme/issues"
+  },
+  "homepage": "https://losehu.com",
+  "devDependencies": {
+    "hexo": "5.2.0"
+  }
+}

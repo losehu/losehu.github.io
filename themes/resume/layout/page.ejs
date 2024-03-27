@@ -1,0 +1,94 @@
+<div class="sidebar">
+  <div class="sidebar-inner"  >
+    <header class='header' >
+      <h2 style="color:#845ec2;font-family: Times New Roman;"><%- page.name %></h2>
+      <% if (page.job) { %>
+        <p class='job'><%- page.job %></p>
+      <% } %>
+      <div class='meta' >
+        <% (page.contact||[]).forEach(function(value){ %>
+          <h3> <p ><a <%if(value.url){%>href='<%- value.url %>'<%}%> style="color:#d65db1;font-family: Times New Roman;">
+            <i class="<%- value.icon %> fa-fw"></i>&nbsp;<%- value.text %></a></p></h3>
+        <%})%>
+      </div>
+    <hr>
+    </header>
+    <div class="list" style="font-family: Times New Roman;">
+      <ul class="menu-root">
+        <% site.pages.sort('order').each(function (p) { %>
+          <li>
+            <a href="<%- url_for(p.path) %>" class="sidebar-link<%- page.title === p.title ? ' current' : '' %><%- p.is_new ? ' new' : '' %>"><%- p.title %></a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+    <% if (page.download) { %>
+      <div class="footer">
+        <a class="button" href="<%- page.download.url %>"><i class="<%- page.download.icon %>"></i> <%- page.download.title %></a>
+      </div>
+    <% } %>
+    <% if (page.picture) { %>
+    <div class="footer" >
+      <center> <a style="font-family: Times New Roman;" ><%- page.picture.blogname %></a></center>
+      <center> <h2><a style="color:#845ec2;font-family: Times New Roman;" href="<%- page.picture.blog %>"><%- page.picture.blog %></a></h2></center>
+      <center><a style="font-family: Times New Roman;"><%- page.picture.title %></a></center>
+      <center><img src="<%- page.picture.url %>" style="height: 160px;width: 160px; max-width: 100%; max-height: 100%;" alt="<%- page.picture.title %>"></center>
+    <!--  <center>个人微信</center>
+      <center><img src="https://b3logfile.com/file/2021/08/1031630411994_.pic_hd-58460640.jpg" style="height: 140px;width: 140px; max-width: 100%; max-height: 100%;"  alt="个人微信"></center>
+    -->
+    </div>
+    <% } %>
+
+  </div>
+
+</div>
+
+<div class="content with-sidebar" style="font-family: Microsoft YaHei; font-size: 1em;">
+  <div class='resume-header'style="background: #845ec2 ;">
+    <% if (page.avatar) { %>
+      <div class='avatar'><img no-lazy class='avatar' src='<%- page.avatar %>'/></div>
+    <% } %>
+
+    <h1 class='resume-title'  style="color:#fff;font-family: Times New Roman;font-size: 2.4em;"><%- page.name %></h1>
+    <b><p class='description' style="color:#fff;font-family: Arial;"><%- page.description %></p></b>
+
+    <% if (page.social) { %>
+      <div class='social-btns'>
+        <% page.social.forEach((item, i) => { %>
+          <a href="<%- url_for(item.url) %>" class="social-link"><i class='<%- item.icon %> fa-fw'></i><%- item.text %></a>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+  <%- page.content %>
+
+  <% if (theme.valine ){ %>    <!-- Valine Comments background-image: linear-gradient(to right top, #d6d9d7, #d9dddc, #dde1e0, #e1e4e5, #e5e8e9, #d3e1e8, #c5d8e9, #bcceea, #a1b5e5, #8e9ade, #857ed3, #845ec2);  -->    
+   
+    <section class="comments" id="comments"  
+    style="margin-top:40px;padding:15px 15px 1px 10px;
+ background-color: #fff;   box-shadow: 0px 0px 40px #845ec2;border-radius: 10px;">
+    </section> 
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>   
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>    
+    <!-- Valine Comments script -->    
+    <script>             
+          new Valine({            
+            el: '#comments',                      
+            appId: "<%= theme.valine.appId %>",            
+            appKey: "<%= theme.valine.appKey %>",            
+            avatar: "<%= theme.valine.avatar %>", 
+            placeholder: "<%= theme.valine.placeholder %>",                  
+            pageSize: "<%= theme.valine.pageSize %>",       
+          })		     	    
+     </script>    
+             <!-- Valine Comments end -->
+  <% } %>
+<!-- bu suan zi tong ji -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ 
+  <% if (page.resume_footer) { %>
+    <div class="resume-footer">
+      <%- markdown(page.resume_footer) %>
+    </div>
+  <% } %>
+</div>

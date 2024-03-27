@@ -1,0 +1,8 @@
+hexo clean
+hexo generate
+cd blog 
+hexo clean
+hexo generate
+cd ..
+hexo s
+pause
