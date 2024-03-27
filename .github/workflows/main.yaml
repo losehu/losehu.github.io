@@ -13,11 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Git credentials
-      run: |
-        git config --global user.name "losehu"
-        git config --global user.email "wu58430@126.com"
-    
+
     - name: Install Node.js and npm
       uses: actions/setup-node@v2
       with:
@@ -41,16 +37,11 @@ jobs:
           cd public
           git init 
           git checkout -b main
-          # 添加远程仓库
-          # git remote add origin https://${{ secrets.GH_TOKEN }}github.com/losehu/losehu.github.io.git
           git add .
 
-          # 提交更改到本地仓库
           git commit -m "upload"
 
 
-          # # 推送更改到远程的 main 分支
-          # git push --force origin main
 
     - name: Push changes
       uses: ad-m/github-push-action@master
@@ -60,18 +51,3 @@ jobs:
           directory: public
 
       
-    # - name: token
-    #   run: | 
-    #     export GH_TOKEN= ${{ secrets.GH_TOKEN }}
-    #     echo $GH_TOKEN
-
-  
-           
-    # - name: Deploy to GitHub Pages
-    #   env:
-    #     GH_TOKEN: ${{ secrets.GH_TOKEN }}  # 使用 GitHub Secrets 中的 GH_TOKEN
-    #   run: |
-    #     hexo clean
-    #     hexo generate
-    #     hexo deploy 
-
