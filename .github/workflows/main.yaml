@@ -31,9 +31,8 @@ jobs:
            
     - name: Deploy to GitHub Pages
       env:
-        TOKEN: ${{ secrets.GH_TOKEN }}  
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}  # 使用 GitHub Secrets 中的 GH_TOKEN
       run: |
         hexo clean
         hexo generate
-        git remote set-url origin https://losehu:${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
-        hexo deploy
+        hexo deploy --token $GH_TOKEN  # 使用环境变量传递令牌

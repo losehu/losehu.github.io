@@ -105,4 +105,3 @@ deploy:
   type: git
   repo: https://github.com/losehu/losehu.github.io.git
   branch: main
-  token: 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  # 引用 GitHub Secrets
