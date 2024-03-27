@@ -103,5 +103,5 @@ theme: resume
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://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@github.com/losehu/losehu.github.io.git
+  repo: https://github.com/losehu/losehu.github.io.git
   branch: main
