@@ -42,7 +42,7 @@ jobs:
           git init 
           git checkout -b main
           # 添加远程仓库
-          git remote add origin https://github.com/losehu/losehu.github.io.git
+          git remote add origin https://${{ GH_TOKEN }}github.com/losehu/losehu.github.io.git
           git add .
 
           # 提交更改到本地仓库
