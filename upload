@@ -1,8 +1,3 @@
-hexo clean
-hexo generate
-cd blog 
-hexo clean
-hexo generate
-cd ..
-hexo d
-pause
+git add .
+git commit -m "upload"
+git push origin sources

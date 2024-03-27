@@ -45,7 +45,8 @@ jobs:
           # git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
           # git push -u origin main
 
-
+    - name: Pull changes from remote
+      run: git pull origin main
 
     - name: Push changes
       uses: ad-m/github-push-action@master
