@@ -17,7 +17,7 @@ jobs:
       run: |
         git config --global user.name "losehu"
         git config --global user.email "wu58430@126.com"
-        
+    
     - name: Install Node.js and npm
       uses: actions/setup-node@v2
       with:
@@ -25,20 +25,35 @@ jobs:
 
     - name: Install Hexo
       run: npm install -g hexo-cli
-      
-    - name: token
-      run: | 
-        export GH_TOKEN= ${{ secrets.GH_TOKEN }}
-        echo $GH_TOKEN
+
 
     - name: Install Hexo deployer
-      run: npm install hexo-deployer-git --save
-           
-    - name: Deploy to GitHub Pages
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}  # 使用 GitHub Secrets 中的 GH_TOKEN
+        run: npm install hexo-deployer-git --save
+        
+    - name: upload
       run: |
-        hexo clean
-        hexo generate
-        hexo deploy 
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git clone https://github.com/losehu/losehu.github.io.git sources
+          cd sources
+          hexo clean
+          hexo generate
+          hexo deploy 
+
+
+      
+    # - name: token
+    #   run: | 
+    #     export GH_TOKEN= ${{ secrets.GH_TOKEN }}
+    #     echo $GH_TOKEN
+
+  
+           
+    # - name: Deploy to GitHub Pages
+    #   env:
+    #     GH_TOKEN: ${{ secrets.GH_TOKEN }}  # 使用 GitHub Secrets 中的 GH_TOKEN
+    #   run: |
+    #     hexo clean
+    #     hexo generate
+    #     hexo deploy 
 
