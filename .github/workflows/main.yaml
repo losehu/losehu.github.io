@@ -38,7 +38,7 @@ jobs:
           hexo clean
           hexo generate
           cd public
-          git init 
+          git init
           git checkout -b main
           git add .
           git commit -m "upload"
