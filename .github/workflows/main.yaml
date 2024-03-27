@@ -32,13 +32,13 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git clone https://github.com/losehu/losehu.github.io.git sources
           cd sources
+          git checkout sources
           hexo clean
           hexo generate
           cd public
           git init 
           git checkout -b main
           git add .
-
           git commit -m "upload"
 
 
