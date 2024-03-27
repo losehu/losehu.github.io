@@ -33,7 +33,8 @@ jobs:
       env:
         TOKEN: ${{ secrets.GH_TOKEN }}  
       run: |
-        git remote set-url origin https://losehu:${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
         hexo clean
         hexo generate
+        git remote set-url origin https://losehu:${{ secrets.GH_TOKEN }}@github.com/losehu/losehu.github.io.git
+
         hexo deploy
