@@ -17,8 +17,8 @@ contact:
     url: https://github.com/losehu
   #  team
   - icon: fa fa-bar-chart
-    text: Team(CV:PU)
-    url: https://yangkailun.com/team.html
+    text: K5Web
+    url: https://k5.vicicode.com/
   #个人网站
   - icon: fas fa-globe
     text: Blog
@@ -56,32 +56,12 @@ picture:
 > 如果追忆会荡起涟漪，那么今天的秋红落叶和晴空万里都归你
 
 
-你好呀！我正于 **CV:PU Lab** 攻读硕士研究生。我的研究方向包括：环境理解 、深度学习 、 嵌入式开发。 致力于构建高度智能与自动化的机器人。
+你好呀！我正攻读硕士研究生。我的研究方向包括：环境理解 、深度学习 、 嵌入式开发。 致力于构建高度智能与自动化的机器人。
 
-
-
-## <i class="fas fa-user-graduate"></i> 个人经历
-
-
-
-* **CV:PU Lab**  <a style="float:right; color: #845ec2; width:auto;">2023/10—至今</a> 
-* **四川棱镜云**  <a style="float:right; color: #845ec2; width:auto;">2024/03—2024/04</a>
-* **NEFU_CHINA团队**  <a style="float:right; color: #845ec2; width:auto;">2023/05—2023/12</a>
-* **中国一重集团有限公司**  <a style="float:right; color: #845ec2; width:auto;">2023/06—2023/07</a>
-* **东林Ares战队**  <a style="float:right; color: #845ec2; width:auto;">2021/04—2022/09</a>
 
 
 <!-- <p align="right">2020/9—2023/6</p> -->
 
-##  <i class="fa fa-paperclip"></i> 个人技能
-* **编程开发:** 具有 Win/Linux/MAC OS 平台开发经验,熟练C/C++、Python、VB等语言，擅长QT跨平台开发。
-* **图像处理:** 熟练运用OpenCV/MV对目标检测识别，能结合专业理论进行算法创新。
-* **嵌入式开发:** 曾进行 MM32/STC/STM32/Infineon/WCH 系列单片机开发应用，有丰富的项目经验。
-* **机器人技术:** 掌握PID、LQR、Kalman Filter算法、能够对控制系统建模仿真、模拟验证。能实现机器人自动化、智能化，能独立调试开发无人系统。
-* **算法与模型:** 掌握GA、BP、ACO、Kmeans等多种算法的原理与应用，在最优化问题、插值拟合、分类预测等方面具有理论基础和数学建模经验。
-* **PLC控制:** 熟悉西门子S7-1500/1200/200 PLC，擅长SCL与LAD语言，曾独立开发六部十层电梯控制算法
-* **图片设计** 熟练使用Photoshop、AI绘图软件
-* **办公软件** 熟练使用Office，擅长Excel公式
 
 
 ##  <i class="fa fa-gear"></i> 科研竞赛
@@ -102,7 +82,6 @@ picture:
 * **第二十三届中国机器人及人工智能大赛**  <a class="price-color">全国一等奖</a> 
 * **全国大学生电子设计大赛**  <a class="price-color">全国二等奖</a> 
 * **第十四届蓝桥杯大赛——单片机设计与开发大学组**  <a class="price-color">全国二等奖</a> 
-* **WER世界教育机器人大赛**  <a class="price-color">全国二等奖</a> 
 * **第十一届中国教育机器人大赛**  <a class="price-color">全国三等奖</a> 
 * **第十五届全国大学生节能减排社会实践与科技竞赛** <a class="price-color">全国三等奖</a> 
 * **美国大学生数学建模竞赛**  <a class="price-color">H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;奖</a> 
@@ -114,7 +93,6 @@ picture:
 * **一种不规则包装快递全方位自动分拣扫描设备**  <a class="price-color">北大核心论文（学生一作)</a> 
 * **图像处理逆透视与去畸变上位机软件**  <a class="price-color">计算机软件著作（学生一作)</a> 
 
-##  <i class="fa fa-star"></i> 项目经历
 
 
 
